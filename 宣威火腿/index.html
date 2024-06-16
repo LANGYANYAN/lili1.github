@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>首页</title>
+		<link rel="stylesheet" href="css/css.css" />
+	</head>
+	<body style="margin: 0px auto;width: 1300px;background-color: #FFF7D6;">
+		<!-- 头部 -->
+		<div id="header">
+					<img src="img/屏幕截图 2024-06-15 145234.png" alt="" />
+					
+					<div class="box">
+						<input type="text" class="input" placeholder="请输入内容" />
+						<input type="button" value="搜索" class="button" />
+					</div>
+					
+					<div class="text">
+					<a href="login.html" target="_blank">登录</a>
+					<a href="register.html" target="_blank">注册</a>
+					
+					</div>
+				</div>
+		
+		<!-- 导航 -->
+		<div id="nav">
+			<a href="index.html">首 页</a>
+			<a href="produce.html">火 腿 产 品</a>
+			<a href="produce_introduce.html">产 品 介 绍</a>
+			<a href="trait.html">产 品 特 色</a>
+			<a href="history.html">生 产 过 程</a>
+			<a href="valuable.html">营 养 价 值</a>
+			<!-- <a href="">购 买 渠 道</a> -->
+			
+				</div>
+		<!-- banner -->
+		<div id="banner">
+					<ul id="imglist">
+						<li><img src="img/R-C.png" alt="" /></li>
+					<li><img src="img/DM_20240615192503_001.png" alt="" /></li>
+					<li><img src="img/DM_20240615192505_001.jpg" alt="" /></li>
+					<li><img src="img/R-C.png" alt="" /></li>
+					</ul>
+					<div class="prev">&lt;</div>
+					<div class="next">&gt;</div>
+				</div>
+		
+		<!-- mian -->
+		<div id="main">
+			<div class="introduce">
+				
+				<!-- <img src="img/OIP-C4.jpg" alt="" /> -->
+				<div class="shade">
+					<h1>云腿来历</h1>
+				</div>
+				<p>宣威火腿，云南省著名地方特产之一，因产于宣威而得名。它的主要特点是：形似琵琶，只大骨小，皮薄肉厚肥瘦适中；切开断面，香气浓郁，色泽鲜艳，瘦肉呈鲜红色或玫瑰色，肥肉呈乳白色，骨头略显桃红，似血气尚在滋润。其品质优良，足以代表云南火腿，故常称“云腿”。</p>
+			</div>
+			
+			<div class="introduce">
+				<p>宣威火腿的历史悠久，最迟始于明代。20世纪初，浦在廷等人集资兴办“宣和火腿公司”，引进机械设备制作火腿罐头，继而“云南宣威浦在廷兄弟食品罐头有限公司”成立，其产品于1923年参加广州等地赛会受到各界的好评。孙中山先生为其题词“饮和食德”，从此名声大著，远销香港、新加坡等地。</p>
+			   <div class="shade1">
+			   	<h1>悠久历史</h1>
+			   </div>
+			</div>
+		
+		    <div class="shopping">
+				<p style="color: red;">购买渠道：</p>
+				<p style="width: 600px;margin-left: 300px;">各大购物平台：宣威火腿官方旗舰店</p>
+				<p style="text-align: right;">123456789:服务热线</p>
+			</div>
+			
+			</div>
+		<!-- footer -->
+		<div id="footer">
+			<p>@李健鹏20220002170</p>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<script>
+				var left=0;
+				var time;
+				var eprev=document.querySelector('.prev');
+				var enext=document.querySelector('.next');
+				run();
+				function run(){
+					if(left<-3870){
+						left=0
+					}
+					var n=(left %1290==0)?n=1200:n=10;
+					imglist.style.marginLeft=left+'px';
+					left -= 10;
+					time=setTimeout(run,n);
+				}
+				function imgchange(n){
+					let lt=-(n*1290);
+					imglist.style.marginLeft=lt+'px';
+					left=lt;
+				}
+				eprev.onclick=function(){
+					var n=Math.floor(-left/1290)-1;
+					if(n==-1){
+						n=3;
+					}
+					imgchange(n);
+				}
+				enext.onclick=function(){
+					var n=Math.floor(-left/1290)+1;
+					if(n==4){
+						n=0;
+					}
+					imgchange(n)
+				}
+			</script>
+	</body>
+</html>
